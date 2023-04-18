@@ -1,0 +1,16 @@
+import pandas as pd 
+df = pd.read_csv("/Heart.csv") 
+df 
+df.describe() 
+df.info() 
+df.replace(0,'NAN') 
+df.dropna() 
+df.fillna(df.mean()) 
+x=df.iloc[:,0:14].values 
+x 
+y=df.iloc[:,14].values 
+y 
+from sklearn.model_selection import train_test_split 
+x_train,x_test,y_train,y_test = train_test_split(x,y,test_size = 0.2, random_state=0) 
+print (x_train.shape) 
+print (x_test.shape)
